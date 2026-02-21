@@ -1,9 +1,10 @@
 .section .bss
 .globl ram
-.lcomm ram, 256              # Reserve 256 bytes of RAM (uninitialized memory)
+#loading 256 bits of ram
+.lcomm ram, 256         
 
 .section .text
-.globl fill_ram              # Make function visible to C program
+.globl fill_ram    
 
 fill_ram:
     # Store FFh into RAM locations 50H - 58H using direct addressing
@@ -18,6 +19,6 @@ fill_ram:
     movb $0xFF, ram+0x57
     movb $0xFF, ram+0x58
 
-    ret                      # Return control back to C program
+    ret                     
 
 .section .note.GNU-stack,"",@progbits
