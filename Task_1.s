@@ -1,6 +1,7 @@
 .section .bss
 .globl ram
-#loading 256 bits of ram
+    #loading 256 bits of ram
+
 .lcomm ram, 256         
 
 .section .text
